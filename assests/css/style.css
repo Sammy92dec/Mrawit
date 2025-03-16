@@ -1,24 +1,24 @@
 /* Navbar Styling */
 .navbar {
-    padding: 20px 30px; /* Adjusts overall navbar padding */
+    padding: 20px 50px; /* Adjust overall navbar padding */
 }
 
-/* Make "Mrawit" bigger and move slightly to the right */
+/* Make "Mrawit" Bigger and Keep It on the Left */
 .navbar-brand {
-    font-size: 3rem; /* Adjust size - make it bigger */
+    font-size: 3rem;
     font-weight: bold;
     color: white !important;
-    margin-left: 50px; /* Moves slightly away from the left */
+    margin-left: 40px; /* Keeps the brand/logo on the left */
 }
 
-/* Make navbar links bigger and start from the middle */
+/* Move Navbar Links to the Right */
 .navbar-nav {
-    font-size: 1.2rem; /* Increases text size */
+    font-size: 1.2rem;
     font-weight: bold;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end; /* Moves links to the right */
     width: 60%;
-    margin-left: auto; /* Pushes items towards the center */
+    margin-left: auto; /* Pushes the links further to the right */
 }
 
 /* Make nav links white */
