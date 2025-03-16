@@ -1,48 +1,153 @@
-.navbar-dark {
-    background-color: #0a0807; /* Dark brown color */
-  }
-
-.navbar-dark .navbar-brand {
-color: #ff6f61; /* Peach color for the logo */
+/* Navbar Styling */
+.navbar {
+    padding: 20px 30px; /* Adjusts overall navbar padding */
 }
 
-.navbar-dark .navbar-nav .nav-link {
-color: #ffccbc; /* Light peach for nav links */
+/* Make "Mrawit" bigger and move slightly to the right */
+.navbar-brand {
+    font-size: 3rem; /* Adjust size - make it bigger */
+    font-weight: bold;
+    color: white !important;
+    margin-left: 50px; /* Moves slightly away from the left */
 }
 
-.navbar-dark .navbar-nav .nav-link:hover {
-color: #ff6f61; /* Change link color to peach on hover */
+/* Make navbar links bigger and start from the middle */
+.navbar-nav {
+    font-size: 1.2rem; /* Increases text size */
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    width: 60%;
+    margin-left: auto; /* Pushes items towards the center */
 }
 
-/* Style for the full-width image */
+/* Make nav links white */
+.navbar-nav .nav-link {
+    color: white !important; /* Ensures text is always white */
+    padding: 10px 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.navbar-nav .nav-link:hover {
+    color: #ffcc99 !important; /* Optional: Change color on hover */
+}
+
+/* Adjust spacing between nav items */
+.navbar-nav .nav-item {
+    margin: 0 15px; /* Space between items */
+}
+
+/* Responsive adjustments for screens 600px or smaller */
+@media (max-width: 600px) {
+    .navbar-nav {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .navbar-toggler {
+        display: block !important; /* Show hamburger menu */
+    }
+
+    .navbar-collapse {
+        display: none; /* Hide nav links by default */
+    }
+
+    .navbar-collapse.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*--------------------------------------------------------*/
+
+/* Hero Image Styling */
 .hero-image {
-width: 100%;
-height: 60vh; /* Adjust the height of the image */
-object-fit: cover; /* Make sure the image covers the area */
+    width: 100%;
+    height: 60vh; /* Adjust the height of the image */
+    object-fit: cover; /* Make sure the image covers the area */
 }
 
+/* Hero Text Centered */
 .hero-text {
-text-align: center;
-color: #fff;
-padding: 30px;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-font-size: 2rem;
-font-weight: bold;
+    text-align: center;
+    color: #fff;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(1.5rem, 2.5vw, 2rem); /* Gradually scales between 1.5rem and 2rem */
+    font-weight: bold;
 }
 
+/* Hero Title - Scales Responsively */
+.hero-title {
+    font-size: clamp(1.5rem, 4vw, 3rem); /* Smooth scaling from 1.5rem (small screens) to 3rem (large) */
+    font-weight: bold;
+    margin-bottom: 10px;
+    max-width: 80%;
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem); /* Scales from 1rem (small) to 1.5rem (large) */
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+/* Ensure Smooth Scaling Between 700px - 500px */
+@media (max-width: 700px) {
+    .hero-title {
+        font-size: clamp(1.5rem, 3vw, 2.5rem); /* Smoothly reduces */
+    }
+    .hero-subtitle {
+        font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    }
+    .hero-text {
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-title {
+        font-size: clamp(1.2rem, 2.5vw, 1.5rem); /* Further reduces */
+    }
+    .hero-subtitle {
+        font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+    .hero-text {
+        font-size: clamp(1rem, 1.8vw, 1.2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.4rem; /* Even smaller for compact mobile screens */
+    }
+    .hero-subtitle {
+        font-size: 0.8rem;
+    }
+}
+
+/*----------------------------------------------*/
+
+/* Team Section Styling */
 .team-section {
     padding: 50px 0;
+    text-align: center;
 }
 
+/* Individual Team Member Animation */
 .team-member {
-    text-align: center;
     opacity: 0; /* Hidden initially for animation */
     transform: translateY(50px); /* Start below */
+    transition: all 0.5s ease-in-out;
 }
 
+/* Team Member Image */
 .team-member img {
     border-radius: 50%; /* Circular images */
     width: 150px;
@@ -52,13 +157,21 @@ font-weight: bold;
     margin-bottom: 15px;
 }
 
+/* Team Member Name */
 .team-member h5 {
     margin-top: 15px;
-    font-size: 20px; /* Slightly larger font */
+    font-size: 20px;
     font-weight: bold;
 }
 
+/* Team Member Role Description */
 .team-member p {
-    font-size: 16px; /* Improved readability */
+    font-size: 16px;
     color: #cccccc;
+}
+
+/* Animation on Scroll */
+.team-section .team-member.show {
+    opacity: 1;
+    transform: translateY(0);
 }
